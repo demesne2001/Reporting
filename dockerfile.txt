@@ -14,4 +14,4 @@ RUN pip install -r requirements
 
 EXPOSE 3032
 
-CMD python3 manage.py runserver 127.0.0.1:3032
+CMD python3 manage.py runserver 0:3032
