@@ -23,7 +23,7 @@ pipeline {
                 script{
                     bat 'docker run -d -p 3032:3032 finaldockerproject'
                 }
-                echo 'Docker push done'
+                echo 'Docker Running'
             }
         }
         stage('Docker push') {
