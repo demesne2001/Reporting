@@ -18,6 +18,14 @@ pipeline {
                 echo 'Docker Image done'
             }
         }
+        stage('Docker Run') {
+            steps {
+                script{
+                    bat 'docker run -d --name finaldockerproject --expose 3032 finaldockerproject:latest'
+                }
+                echo 'Docker push done'
+            }
+        }
         stage('Docker push') {
             steps {
                 script{
