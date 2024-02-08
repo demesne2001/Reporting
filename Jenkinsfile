@@ -21,7 +21,7 @@ pipeline {
         stage('Docker Run') {
             steps {
                 script{
-                    bat 'docker run -d -p 5000:5000 finaldockerproject:latest'
+                    bat 'docker run -d -p 3032:3032 finaldockerproject:latest'
                 }
                 echo 'Docker push done'
             }
