@@ -23,6 +23,7 @@ pipeline {
                     {
                          bat 'docker stop finaldockerproject'
                          bat 'docker rm finaldockerproject'
+                        echo environment.mypods
                     }
                     else
                     {
