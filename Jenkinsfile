@@ -20,6 +20,7 @@ pipeline {
                    if(a >0 )
                     {
                          echo 'Docker Image done 2'
+                        echo a
                     }
                     
                 }
