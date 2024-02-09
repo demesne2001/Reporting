@@ -2,6 +2,7 @@
 pipeline {
     agent any
 
+    def skipBuild=0
     stages {
         stage('checkout') {
             steps {
@@ -13,7 +14,9 @@ pipeline {
         stage('Docker Image') {
             steps {
                 script{
-                   if( bat 'docker build . -f dockerfile.txt -t finaldockerproject')
+                    bat 'docker build . -f dockerfile.txt -t finaldockerproject'
+                    skipBuild=1
+                   if(skipBuild >0 )
                     {
                          echo 'Docker Image done 2'
                     }
