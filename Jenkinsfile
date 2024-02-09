@@ -16,7 +16,7 @@ pipeline {
                 
                 script{
                     def a=0
-                    bat 'docker build . -f dockerfile.txt -t --name finaldockerproject'
+                    bat 'docker build . -f dockerfile.txt -t  finaldockerproject'
                     a=1
                     if(a>0)
                     {
@@ -31,7 +31,7 @@ pipeline {
         stage('Docker Run') {
             steps {
                 script{
-                    bat 'docker run  -p 3032:3032 -d finaldockerproject'
+                    bat 'docker run  -p 3032:3032 -d --name finaldockerproject'
                 }
                 echo 'Docker Running'
             }
