@@ -14,6 +14,7 @@ pipeline {
         stage('Docker Image') {
             steps {
                 script{
+                    def skipBuild=0
                     bat 'docker build . -f dockerfile.txt -t finaldockerproject'
                     skipBuild=1
                    if(skipBuild >0 )
