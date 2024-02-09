@@ -1,7 +1,9 @@
 
 pipeline {
     agent any
-
+environment {
+        def mypods = []
+    }
     
     stages {
         stage('checkout') {
