@@ -2,7 +2,7 @@
 pipeline {
     agent any
 
-    def skipBuild=0
+    
     stages {
         stage('checkout') {
             steps {
