@@ -14,10 +14,10 @@ pipeline {
         stage('Docker Image') {
             steps {
                 script{
-                    def skipBuild=0
+                    def a=0
                     bat 'docker build . -f dockerfile.txt -t finaldockerproject'
-                    skipBuild=1
-                   if(skipBuild >0 )
+                    a=1
+                   if(a >0 )
                     {
                          echo 'Docker Image done 2'
                     }
