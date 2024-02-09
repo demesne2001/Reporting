@@ -20,8 +20,8 @@ pipeline {
                     a=1
                     if(a>0)
                     {
-                         bat 'docker stop interesting_booth'
-                         bat 'docker rm interesting_booth'
+                         bat 'docker stop zealous_dhawan'
+                         bat 'docker rm zealous_dhawan'
 
                     }
                 }
