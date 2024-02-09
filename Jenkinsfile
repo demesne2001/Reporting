@@ -9,10 +9,14 @@ pipeline {
                 echo 'checkout done'
             }
         }
+        
         stage('Docker Image') {
             steps {
                 script{
-                    bat 'docker build . -f dockerfile.txt -t finaldockerproject'
+                   if( bat 'docker build . -f dockerfile.txt -t finaldockerproject')
+                    {
+                         echo 'Docker Image done 2'
+                    }
                     
                 }
                 echo 'Docker Image done'
