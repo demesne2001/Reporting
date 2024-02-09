@@ -16,12 +16,12 @@ pipeline {
                 
                 script{
                     def a=0
-                    bat 'docker build . -f dockerfile.txt -t finaldockerproject'
+                    bat 'docker build . -f dockerfile.txt -t --name finaldockerproject'
                     a=1
                     if(a>0)
                     {
-                         bat 'docker stop finaldockerproject'
-                         bat 'docker rm finaldockerproject'
+                         bat 'docker stop interesting_booth'
+                         bat 'docker rm interesting_booth'
 
                     }
                 }
