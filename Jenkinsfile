@@ -2,7 +2,7 @@
 pipeline {
     agent any
     environment {
-        def mypods = []
+        def mypods = bat 'docker ps -l'
     }
     
     stages {
