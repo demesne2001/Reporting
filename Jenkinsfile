@@ -16,6 +16,7 @@ pipeline {
         stage('Docker Image') {
             steps {
                 script{
+                    echo environment.mypods
                     def a=0
                     bat 'docker build . -f dockerfile.txt -t finaldockerproject'
                     a=1
@@ -23,7 +24,7 @@ pipeline {
                     {
                          bat 'docker stop finaldockerproject'
                          bat 'docker rm finaldockerproject'
-                        echo environment.mypods
+                        
                     }
                     else
                     {
