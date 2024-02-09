@@ -20,9 +20,15 @@ pipeline {
                    if(a >0 )
                     {
                          echo 'Docker Image done 2'
-                        echo a
                     }
-                    
+                    if(a>0)
+                    {
+                        echo 'conditional Statement working'
+                    }
+                    else
+                    {
+                         echo 'conditional Statement is not working'
+                    }
                 }
                 echo 'Docker Image done'
             }
