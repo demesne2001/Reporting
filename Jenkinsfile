@@ -1,9 +1,7 @@
 
 pipeline {
     agent any
-    environment {
-        def mypods = bat 'docker ps -l'
-    }
+   
     
     stages {
         stage('checkout') {
@@ -16,20 +14,7 @@ pipeline {
         stage('Docker Image') {
             steps {
                 script{
-                    echo environment.mypods
-                    def a=0
                     bat 'docker build . -f dockerfile.txt -t finaldockerproject'
-                    a=1
-                    if(a>0)
-                    {
-                         bat 'docker stop finaldockerproject'
-                         bat 'docker rm finaldockerproject'
-                        
-                    }
-                    else
-                    {
-                         echo 'conditional Statement is not working'
-                    }
                 }
                 echo 'Docker Image done'
             }
