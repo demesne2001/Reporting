@@ -13,8 +13,17 @@ pipeline {
         
         stage('Docker Image') {
             steps {
+                
                 script{
+                    def a=0
                     bat 'docker build . -f dockerfile.txt -t finaldockerproject'
+                    a=1
+                    if(a>0)
+                    {
+                         bat 'docker stop finaldockerproject'
+                         bat 'docker rm finaldockerproject'
+
+                    }
                 }
                 echo 'Docker Image done'
             }
